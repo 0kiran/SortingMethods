@@ -10,17 +10,29 @@ public class utils {
         int swaps = -1;
         while(swaps != 0){
             swaps = 0;
-            i = 0;
-            end = arr.length-1
+            for(int i = 0; i < arr.length-1; i++){
+                if(arr[i] > arr[i+1]){
+                    swap(arr,i,i+1);
+                    swaps++;
+                }
+            }
+        }
+    }
+
+    public static void bubbleShort(int[] arr){
+        int swaps = -1;
+        int end = arr.length-1;
+        while(swaps != 0){
+            int i = 0;
+            swaps = 0;
             while(i < end){
                 if(arr[i] > arr[i+1]){
                     swap(arr,i,i+1);
                     swaps++;
                 }
-                end = i;
                 i++;
-                
             }
+            end = i;
         }
     }
 
@@ -36,7 +48,7 @@ public class utils {
         int s1 = 0;
         int s2 = 0;
         
-        for(i : before){
+        for(int i : before){
             s1+=before[i];
             s2+=after[i];
         }
@@ -44,7 +56,7 @@ public class utils {
     }
     
     public static boolean isSorted(int[] a){
-        for(i = 0; i < a.length-1; i++){
+        for(int i = 0; i < a.length-1; i++){
             if(a[i] > a[i+1]){
                 return false;
             }
