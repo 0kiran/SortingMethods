@@ -26,4 +26,24 @@ public class utils {
         }
         return arr;
     }
+    
+    public static boolean checkSum(int[] before, int[] after){
+        int s1 = 0;
+        int s2 = 0;
+        
+        for(i : before){
+            s1+=before[i];
+            s2+=after[i];
+        }
+        return(s1==s2);
+    }
+    
+    public static boolean isSorted(int[] a){
+        for(i = 0; i < a.length-1; i++){
+            if(a[i] > a[i+1]){
+                return false;
+            }
+        }
+        return true;
+    }
 }
