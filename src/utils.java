@@ -43,6 +43,20 @@ public class utils {
         }
         return arr;
     }
+
+    public static void selection(int[] a){
+        int minpos = 0;
+        for (int curpos = 0; curpos < a.length-1; curpos++){
+            int minVal = a[curpos];
+            for(int i = curpos+1; i < a.length; i++){
+                if(minVal > a[i]){
+                    minVal = a[i];
+                    minpos = i;
+                }
+            }
+            swap(a,curpos,minpos);
+        }
+    }
     
     public static boolean checkSum(int[] before, int[] after){
         int s1 = 0;
